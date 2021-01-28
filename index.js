@@ -10,7 +10,7 @@ function createGreeting(inputName) {
     return greeting
 }
 
-function displayGreeting(){
+function displayGreeting() {
     let userName = prompt('Please Enter Your Name: ');
     let greeting = createGreeting(userName);
     if (greeting == 'Hello') {
@@ -34,5 +34,20 @@ function shouldIWatchThis() {
     confirm("Yeah!!! You should!");
 }
 
+function repeatImage() {
+    let numberInput = parseInt(prompt('Please enter a number'));
+    // no exception handling yet for non-numbers entered by user
+    for (i = 1; i < (numberInput + 1); i++) {
+        console.log(i);
+        let count = document.createElement('p');
+        count.innerHTML = 'Image ' + i;
+        document.body.appendChild(count);
+        let newImage = document.createElement("img");
+        newImage.src = "https://lh3.googleusercontent.com/proxy/1hlbLMkT9yC-JVsZolmeF9LZwqDtzP0hBfq9st5qyXyxGMN1rIvgM7ANP_KAaVnHnQT-2c66EyLXYWO6krfiLYA80aAzq4e9NXakO0aYFJ8rCIk"
+        document.body.appendChild(newImage);
+    }
+}
+
 displayGreeting();
+repeatImage();
 document.getElementById('header-title').innerHTML = "Watch This Movie Today !!! " + getFormattedDate();
