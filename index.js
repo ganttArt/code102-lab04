@@ -2,12 +2,24 @@ function createGreeting(inputName) {
     let greeting
     if (inputName == 'Chris') {
         greeting = 'Hello Creator';
-    } else if (inputName == null) {
+    } else if ((inputName == '') || (inputName == null)) {
         greeting = 'Hello';
     } else {
         greeting = 'Hello ' + inputName
     }
     return greeting
+}
+
+function displayGreeting(){
+    let userName = prompt('Please Enter Your Name: ');
+    let greeting = createGreeting(userName);
+    if (greeting == 'Hello') {
+        while (greeting === 'Hello') {
+            userName = prompt('You need to enter your name to see this site:');
+            greeting = createGreeting(userName)
+        }
+    }
+    document.getElementById('greeting').innerHTML = greeting;
 }
 
 function getFormattedDate() {
@@ -22,6 +34,5 @@ function shouldIWatchThis() {
     confirm("Yeah!!! You should!");
 }
 
-let userName = prompt('Please Enter Your Name: ');
-document.getElementById('greeting').innerHTML = createGreeting(userName);
+displayGreeting();
 document.getElementById('header-title').innerHTML = "Watch This Movie Today !!! " + getFormattedDate();
