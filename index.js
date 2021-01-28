@@ -1,21 +1,27 @@
-let userName = prompt('Please Enter Your Name: ');
-
-if (userName == 'Chris') {
-    document.getElementById('greeting').innerHTML = 'Hello Creator';
-} else if (userName == null) {
-    document.getElementById('greeting').innerHTML = 'Hello';
-} else {
-    document.getElementById('greeting').innerHTML = 'Hello ' + userName
+function createGreeting(inputName) {
+    let greeting
+    if (inputName == 'Chris') {
+        greeting = 'Hello Creator';
+    } else if (inputName == null) {
+        greeting = 'Hello';
+    } else {
+        greeting = 'Hello ' + inputName
+    }
+    return greeting
 }
 
-let today = new Date();
-let yearToday = today.getFullYear();
-let monthToday = today.getMonth() + 1;
-let dayToday = today.getDate();
-let formattedDate = `(${monthToday}/${dayToday}/${yearToday})`
-
-document.getElementById('header-title').innerHTML = "Watch This Movie Today !!! " + formattedDate
+function getFormattedDate() {
+    let today = new Date();
+    let yearToday = today.getFullYear();
+    let monthToday = today.getMonth() + 1;
+    let dayToday = today.getDate();
+    return `(${monthToday}/${dayToday}/${yearToday})`
+}
 
 function shouldIWatchThis() {
     confirm("Yeah!!! You should!");
 }
+
+let userName = prompt('Please Enter Your Name: ');
+document.getElementById('greeting').innerHTML = createGreeting(userName);
+document.getElementById('header-title').innerHTML = "Watch This Movie Today !!! " + getFormattedDate();
