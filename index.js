@@ -43,7 +43,7 @@ function repeatImage() {
         count.innerHTML = 'Image ' + i;
         document.body.appendChild(count);
         let newImage = document.createElement("img");
-        newImage.src = "https://lh3.googleusercontent.com/proxy/1hlbLMkT9yC-JVsZolmeF9LZwqDtzP0hBfq9st5qyXyxGMN1rIvgM7ANP_KAaVnHnQT-2c66EyLXYWO6krfiLYA80aAzq4e9NXakO0aYFJ8rCIk"
+        newImage.src = "https://images-na.ssl-images-amazon.com/images/I/714zt-AmxHL._RI_.jpg"
         document.body.appendChild(newImage);
     }
 }
