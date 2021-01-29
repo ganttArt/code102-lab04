@@ -36,7 +36,7 @@ function shouldIWatchThis() {
 
 function repeatImage() {
     let numberInput = parseInt(prompt('Please enter a number'));
-    // no exception handling yet for non-numbers entered by user
+    
     for (i = 1; i < (numberInput + 1); i++) {
         console.log(i);
         let count = document.createElement('p');
